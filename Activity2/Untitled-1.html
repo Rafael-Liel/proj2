@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input" placeholder="Enter Something">
+    <button onclick="Showtext()">Show</button>
+    <div id="output"></div>
+
+    <script>
+        function Showtext(){
+            let input = document.getElementById("input").value;
+
+            document.getElementById("output").innerText =
+            "You Entered: " + input;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slumbook Review</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e3f2fd;
+      color: #0d47a1;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #1565c0;
+    }
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #64b5f6;
+      background-color: #f0faff;
+    }
+    .rating-group {
+      display: flex;
+      justify-content: space-between;
+      max-width: 300px;
+      margin: 10px 0;
+    }
+    .rating-group input {
+      display: none;
+    }
+    .rating-group label {
+      font-size: 30px;
+      color: #ccc;
+      cursor: pointer;
+    }
+    .rating-group input:checked ~ label,
+    .rating-group label:hover,
+    .rating-group label:hover ~ label {
+      color: #ffb400;
+    }
+    input[type="submit"] {
+      background-color: #1976d2;
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    input[type="submit"]:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Review a Slumbook Entry</h1>
+  <form action="review_output.php" method="POST">
+    
+    <label for="reviewee">Who are you reviewing?</label>
+    <select name="reviewee" required>
+      <option value="">Select...</option>
+      <option value="Rafael">Rafael</option>
+      <option value="Andrea">Andrea</option>
+      <option value="Carlos">Carlos</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <label>Rate Their Entry:</label>
+    <div class="rating-group">
+      <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
+      <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
+      <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
+      <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
+      <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
+    </div>
+
+    <label>Your Comment:</label>
+    <textarea name="comment" rows="4" placeholder="Say something nice or fun!"></textarea>
+
+    <input type="submit" value="Submit Review">
+  </form>
+</body>
+</html>
